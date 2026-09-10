@@ -1,5 +1,68 @@
 # Explainable AI for Network Intrusion Detection
 
+Mini Research Problem — *Artificial Intelligence / Advanced Topics in AI & ML*
+(based on Lecture 09: Interpretability & Explainability).
+
+📄 **Presentation: [`slides/mrp.pdf`](slides/mrp.pdf)** — 11 slides, ~10 min
+
+## What this does
+
+An ML-based intrusion detection system only outputs *normal* or *attack*, which
+a network engineer cannot act on. This project trains a Random Forest on the
+NSL-KDD flow dataset and uses **SHAP** to show which of the 41 flow features
+drove each decision.
+
+**Result:** the model relies on exactly the indicators a network engineer would
+check manually.
+
+| Attack type | Top SHAP features | Interpretation |
+|---|---|---|
+| DoS | `src_bytes`=0, `count`, `dst_host_serror_rate`=1 | SYN flood: empty packets, many connections, failed handshakes |
+| Probe | `src_bytes`=0, `dst_host_diff_srv_rate`, `logged_in`=0 | Port scan: empty connections spread over many services |
+
+Accuracy on the official test split: **74.3 %** (DoS recall 77 %, Probe 65 %).
+
+## Run it
+
+```bash
+./run_all.sh        # downloads NSL-KDD, trains, produces all figures (~1 min)
+```
+
+or directly:
+
+```bash
+python3 src/nids_xai.py
+```
+
+Needs `numpy pandas scikit-learn matplotlib shap`.
+
+## Files
+
+```
+src/nids_xai.py    everything: load data -> train Random Forest -> SHAP -> figures
+figures/           shap_global.png, shap_local_dos.png, shap_local_probe.png
+results/           results.json (accuracy, per-class recall, top features)
+slides/mrp.tex     beamer source for the presentation
+slides/mrp.pdf     the presentation
+```
+
+## Data and tools
+
+- NSL-KDD — <https://www.unb.ca/cic/datasets/nsl.html> (Tavallaee et al., CISDA 2009)
+- SHAP — <https://github.com/shap/shap>
+- LIME (discussed in the literature review) — <https://github.com/marcotcr/lime>
+- scikit-learn — <https://scikit-learn.org/>
+
+## References
+
+- Lundberg & Lee, *A Unified Approach to Interpreting Model Predictions*, NeurIPS 2017.
+- Lundberg et al., *From local explanations to global understanding with explainable AI for trees*, Nature Machine Intelligence 2020.
+- Ribeiro et al., *"Why Should I Trust You?"*, KDD 2016.
+- Sommer & Paxson, *Outside the Closed World*, IEEE S&P 2010.
+- Warnecke et al., *Evaluating Explanation Methods for Deep Learning in Security*, IEEE EuroS&P 2020.
+- Wang et al., *An Explainable Machine Learning Framework for Intrusion Detection Systems*, IEEE Access 2020.
+# Explainable AI for Network Intrusion Detection
+
 Mini Research Problem — *Artificial Intelligence / Advanced Topics in AI & ML*,
 built on Lecture 09 (Interpretability, Explainability, AI Ethics).
 

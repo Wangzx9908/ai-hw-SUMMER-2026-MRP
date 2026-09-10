@@ -1,4 +1,26 @@
 #!/usr/bin/env bash
+# Download the data, train the detector, produce all SHAP figures, build the slides.
+set -euo pipefail
+cd "$(dirname "$0")"
+
+echo "== data"
+mkdir -p data figures results
+for f in KDDTrain+.txt KDDTest+.txt; do
+  [ -s "data/$f" ] || curl -sSL -o "data/$f" \
+    "https://raw.githubusercontent.com/defcom17/NSL_KDD/master/$f"
+done
+
+echo "== train + explain"
+python3 src/nids_xai.py
+
+if command -v pdflatex >/dev/null; then
+  echo "== slides"
+  (cd slides && pdflatex -interaction=nonstopmode mrp.tex >/dev/null \
+    && pdflatex -interaction=nonstopmode mrp.tex >/dev/null)
+  echo "   -> slides/mrp.pdf"
+fi
+echo "done"
+#!/usr/bin/env bash
 # Reproduce every number and figure in slides/mrp_xai_nids.pdf from scratch.
 #
 #   ./run_all.sh

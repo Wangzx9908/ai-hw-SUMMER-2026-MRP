@@ -1,0 +1,102 @@
+{
+  "test_accuracy": 0.7429,
+  "recall_per_class": {
+    "normal": 0.972,
+    "DoS": 0.766,
+    "Probe": 0.654,
+    "R2L": 0.004,
+    "U2R": 0.06
+  },
+  "top10_features": {
+    "DoS": [
+      "src_bytes",
+      "count",
+      "logged_in",
+      "dst_host_serror_rate",
+      "dst_host_same_src_port_rate",
+      "dst_bytes",
+      "same_srv_rate",
+      "flag",
+      "srv_count",
+      "diff_srv_rate"
+    ],
+    "Probe": [
+      "src_bytes",
+      "dst_host_diff_srv_rate",
+      "logged_in",
+      "diff_srv_rate",
+      "dst_bytes",
+      "dst_host_srv_count",
+      "dst_host_same_src_port_rate",
+      "dst_host_rerror_rate",
+      "dst_host_serror_rate",
+      "dst_host_same_srv_rate"
+    ],
+    "R2L": [
+      "logged_in",
+      "src_bytes",
+      "dst_host_same_src_port_rate",
+      "service",
+      "dst_host_srv_count",
+      "is_guest_login",
+      "hot",
+      "dst_bytes",
+      "count",
+      "dst_host_count"
+    ]
+  },
+  "local_examples": {
+    "neptune": {
+      "predicted": "DoS",
+      "probability": 1.0,
+      "top_features": [
+        {
+          "feature": "dst_host_serror_rate",
+          "value": 1.0,
+          "shap": 0.126
+        },
+        {
+          "feature": "dst_host_srv_serror_rate",
+          "value": 1.0,
+          "shap": 0.092
+        },
+        {
+          "feature": "srv_serror_rate",
+          "value": 1.0,
+          "shap": 0.082
+        },
+        {
+          "feature": "src_bytes",
+          "value": 0.0,
+          "shap": 0.076
+        }
+      ]
+    },
+    "portsweep": {
+      "predicted": "Probe",
+      "probability": 1.0,
+      "top_features": [
+        {
+          "feature": "src_bytes",
+          "value": 0.0,
+          "shap": 0.143
+        },
+        {
+          "feature": "logged_in",
+          "value": 0.0,
+          "shap": 0.098
+        },
+        {
+          "feature": "dst_host_diff_srv_rate",
+          "value": 0.49,
+          "shap": 0.081
+        },
+        {
+          "feature": "dst_bytes",
+          "value": 0.0,
+          "shap": 0.064
+        }
+      ]
+    }
+  }
+}
