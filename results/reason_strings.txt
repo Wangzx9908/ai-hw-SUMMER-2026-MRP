@@ -1,0 +1,4 @@
+[TP / DoS] verdict=DoS p=1.00 because count=118 (+0.111), dst_host_rerror_rate=1 (+0.071), diff_srv_rate=0.05 (+0.070), same_srv_rate=0.16 (+0.066)
+[FN / guess_passwd] verdict=normal p=0.99 because src_bytes=32 (+0.092), dst_host_same_src_port_rate=0.02 (+0.085), dst_host_count=45 (+0.081), dst_bytes=93 (+0.078)
+[TP / Probe] verdict=Probe p=1.00 because src_bytes=0 (+0.110), dst_host_diff_srv_rate=0.84 (+0.070), service=private (+0.067), dst_host_same_srv_rate=0 (+0.067)
+[TP / Probe] verdict=Probe p=1.00 because dst_host_diff_srv_rate=1 (+0.103), src_bytes=0 (+0.096), diff_srv_rate=1 (+0.087), dst_host_same_srv_rate=0 (+0.056)

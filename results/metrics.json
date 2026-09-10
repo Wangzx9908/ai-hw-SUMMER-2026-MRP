@@ -1,0 +1,117 @@
+{
+  "n_train": 125973,
+  "n_test_official": 22544,
+  "n_encoded_columns": 122,
+  "n_semantic_fields": 41,
+  "classes": [
+    "normal",
+    "DoS",
+    "Probe",
+    "R2L",
+    "U2R"
+  ],
+  "models": {
+    "random_forest": {
+      "fit_seconds": 2.44,
+      "val_accuracy": 0.9985,
+      "val_macro_f1": 0.9604,
+      "test_accuracy": 0.748,
+      "test_macro_f1": 0.5189,
+      "test_per_class_recall": {
+        "normal": 0.9736,
+        "DoS": 0.7697,
+        "Probe": 0.6031,
+        "R2L": 0.0693,
+        "U2R": 0.0746
+      },
+      "test_confusion_matrix": [
+        [
+          9455,
+          67,
+          184,
+          3,
+          2
+        ],
+        [
+          1665,
+          5742,
+          53,
+          0,
+          0
+        ],
+        [
+          797,
+          164,
+          1460,
+          0,
+          0
+        ],
+        [
+          2668,
+          0,
+          12,
+          200,
+          5
+        ],
+        [
+          58,
+          0,
+          0,
+          4,
+          5
+        ]
+      ]
+    },
+    "mlp": {
+      "fit_seconds": 13.74,
+      "val_accuracy": 0.9961,
+      "val_macro_f1": 0.9011,
+      "test_accuracy": 0.7944,
+      "test_macro_f1": 0.6371,
+      "test_per_class_recall": {
+        "normal": 0.972,
+        "DoS": 0.8476,
+        "Probe": 0.7418,
+        "R2L": 0.1133,
+        "U2R": 0.3433
+      },
+      "test_confusion_matrix": [
+        [
+          9439,
+          55,
+          213,
+          2,
+          2
+        ],
+        [
+          1053,
+          6323,
+          83,
+          1,
+          0
+        ],
+        [
+          382,
+          204,
+          1796,
+          39,
+          0
+        ],
+        [
+          2522,
+          0,
+          32,
+          327,
+          4
+        ],
+        [
+          35,
+          0,
+          5,
+          4,
+          23
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "n_explained": 2467,
+  "per_class_top10": {
+    "normal": [
+      {
+        "field": "service",
+        "mean_abs_shap": 0.11735
+      },
+      {
+        "field": "dst_host_srv_count",
+        "mean_abs_shap": 0.08907
+      },
+      {
+        "field": "src_bytes",
+        "mean_abs_shap": 0.0857
+      },
+      {
+        "field": "dst_bytes",
+        "mean_abs_shap": 0.06317
+      },
+      {
+        "field": "dst_host_same_src_port_rate",
+        "mean_abs_shap": 0.03945
+      },
+      {
+        "field": "dst_host_count",
+        "mean_abs_shap": 0.03546
+      },
+      {
+        "field": "dst_host_same_srv_rate",
+        "mean_abs_shap": 0.027
+      },
+      {
+        "field": "hot",
+        "mean_abs_shap": 0.02663
+      },
+      {
+        "field": "count",
+        "mean_abs_shap": 0.02602
+      },
+      {
+        "field": "protocol_type",
+        "mean_abs_shap": 0.02491
+      }
+    ],
+    "DoS": [
+      {
+        "field": "count",
+        "mean_abs_shap": 0.06517
+      },
+      {
+        "field": "src_bytes",
+        "mean_abs_shap": 0.05963
+      },
+      {
+        "field": "flag",
+        "mean_abs_shap": 0.05899
+      },
+      {
+        "field": "diff_srv_rate",
+        "mean_abs_shap": 0.04128
+      },
+      {
+        "field": "service",
+        "mean_abs_shap": 0.038
+      },
+      {
+        "field": "same_srv_rate",
+        "mean_abs_shap": 0.03765
+      },
+      {
+        "field": "srv_count",
+        "mean_abs_shap": 0.03484
+      },
+      {
+        "field": "dst_host_rerror_rate",
+        "mean_abs_shap": 0.03395
+      },
+      {
+        "field": "dst_host_serror_rate",
+        "mean_abs_shap": 0.03383
+      },
+      {
+        "field": "dst_bytes",
+        "mean_abs_shap": 0.03342
+      }
+    ],
+    "Probe": [
+      {
+        "field": "src_bytes",
+        "mean_abs_shap": 0.09182
+      },
+      {
+        "field": "dst_host_diff_srv_rate",
+        "mean_abs_shap": 0.05999
+      },
+      {
+        "field": "diff_srv_rate",
+        "mean_abs_shap": 0.0502
+      },
+      {
+        "field": "service",
+        "mean_abs_shap": 0.04163
+      },
+      {
+        "field": "logged_in",
+        "mean_abs_shap": 0.03961
+      },
+      {
+        "field": "dst_host_rerror_rate",
+        "mean_abs_shap": 0.03927
+      },
+      {
+        "field": "protocol_type",
+        "mean_abs_shap": 0.03773
+      },
+      {
+        "field": "dst_bytes",
+        "mean_abs_shap": 0.03759
+      },
+      {
+        "field": "dst_host_same_srv_rate",
+        "mean_abs_shap": 0.03717
+      },
+      {
+        "field": "dst_host_srv_count",
+        "mean_abs_shap": 0.03403
+      }
+    ],
+    "R2L": [
+      {
+        "field": "service",
+        "mean_abs_shap": 0.03507
+      },
+      {
+        "field": "logged_in",
+        "mean_abs_shap": 0.03237
+      },
+      {
+        "field": "dst_host_same_src_port_rate",
+        "mean_abs_shap": 0.0286
+      },
+      {
+        "field": "src_bytes",
+        "mean_abs_shap": 0.02821
+      },
+      {
+        "field": "hot",
+        "mean_abs_shap": 0.02737
+      },
+      {
+        "field": "is_guest_login",
+        "mean_abs_shap": 0.02652
+      },
+      {
+        "field": "dst_host_srv_count",
+        "mean_abs_shap": 0.02293
+      },
+      {
+        "field": "dst_bytes",
+        "mean_abs_shap": 0.02106
+      },
+      {
+        "field": "dst_host_count",
+        "mean_abs_shap": 0.01835
+      },
+      {
+        "field": "protocol_type",
+        "mean_abs_shap": 0.01649
+      }
+    ],
+    "U2R": [
+      {
+        "field": "service",
+        "mean_abs_shap": 0.06224
+      },
+      {
+        "field": "dst_host_srv_count",
+        "mean_abs_shap": 0.04829
+      },
+      {
+        "field": "num_file_creations",
+        "mean_abs_shap": 0.03825
+      },
+      {
+        "field": "dst_host_count",
+        "mean_abs_shap": 0.0355
+      },
+      {
+        "field": "root_shell",
+        "mean_abs_shap": 0.03305
+      },
+      {
+        "field": "dst_host_diff_srv_rate",
+        "mean_abs_shap": 0.0297
+      },
+      {
+        "field": "dst_bytes",
+        "mean_abs_shap": 0.02634
+      },
+      {
+        "field": "dst_host_same_srv_rate",
+        "mean_abs_shap": 0.02475
+      },
+      {
+        "field": "duration",
+        "mean_abs_shap": 0.0247
+      },
+      {
+        "field": "dst_host_serror_rate",
+        "mean_abs_shap": 0.01874
+      }
+    ]
+  }
+}
